@@ -80,11 +80,5 @@ CmlLib.Core.Installer.NeoForge
 
 인터넷 연결 (CurseForge 모드 다운로드용)
 
-Windows 환경에서 테스트 완료, Linux/OSX 미검증
+Windows 환경에서 테스트 완료, Linux/MacOS는 검증되지 않았습니다.
 
-라이선스
-MIT License © 2026 Junwon Yoon
-
-참고
-이 프로젝트는 **CmlLib용 에드온(Add-on)**으로 설계되었습니다.
-독립적인 런처를 만들기보다는 CmlLib 프로젝트 내에서 모드팩 설치/관리를 확장할 때 사용하세요.
