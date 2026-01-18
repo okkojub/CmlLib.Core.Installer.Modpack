@@ -36,9 +36,8 @@ NuGet 또는 직접 프로젝트 참조 방식 사용 가능:
 
 ```bash
 # 프로젝트에 직접 추가
-git clone https://github.com/your-repo/CurseForgeModPackParser.git
+git clone https://github.com/jwyoon1220/CurseForgeModPackParser.git
 ```
-⚠️ 반드시 CmlLib.Core (v3 이상 권장)이 필요합니다.
 
 사용 예시
 ```csharp
@@ -75,9 +74,9 @@ class Program
 요구사항
 .NET 10 이상
 
-CmlLib.Core (Minecraft 런처 라이브러리)
-CmlLib.Core.Installer.Forge
-CmlLib.Core.Installer.NeoForge
+CmlLib.Core (4.0.6)
+CmlLib.Core.Installer.Forge(1.1.1)
+CmlLib.Core.Installer.NeoForge(4.0.0)
 
 인터넷 연결 (CurseForge 모드 다운로드용)
 
