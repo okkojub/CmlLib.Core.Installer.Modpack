@@ -36,8 +36,9 @@ NuGet 또는 직접 프로젝트 참조 방식 사용 가능:
 ```bash
 # 프로젝트에 직접 추가
 git clone https://github.com/your-repo/CurseForgeModPackParser.git
-⚠️ 반드시 CmlLib.Core (v3 이상 권장)이 필요합니다.
 ```
+⚠️ 반드시 CmlLib.Core (v3 이상 권장)이 필요합니다.
+
 사용 예시
 ```csharp
 using CmlLib.Core.Installer.Modpack;
@@ -52,7 +53,8 @@ class Program
 
         await modPack.LoadAsync();
 
-        var options = new ModPackInstallOptions
+        // ModPackInstallOptions는 MLaunchOption을 extend 합니다. 마인크래프트 메모리/경로 등등을 바꾸길 원하신다면 여기서 지정해주세요.
+        var options = new ModPackInstallOptions 
         {
             GameDirectory = @"C:\Minecraft\Instances\TestPack",
             FileProgress = new Progress<CmlLib.Core.Installers.InstallerProgressChangedEventArgs>(
@@ -63,8 +65,8 @@ class Program
 
         // 설치 및 프로세스 빌드
         var process = await modPack.InstallAndBuildProcessAsync(options);
-
         Console.WriteLine("모드팩 설치 완료. Minecraft 프로세스 생성됨.");
+        process.Start();
     }
 }
 ```
