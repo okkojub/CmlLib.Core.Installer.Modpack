@@ -109,7 +109,7 @@ class TestMain
             ByteProgress = new Progress<ByteProgress>(progress =>
                 Console.WriteLine("Bytes: " + progress.ToRatio() * 100)),
             Session = MSession.CreateOfflineSession("player"),
-            ServerIp = "giowqmndkl.kr",
+            ServerIp = "your.server",
             MaximumRamMb = maxMem,
             MinimumRamMb = 1024,
         };
