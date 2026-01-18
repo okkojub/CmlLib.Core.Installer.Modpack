@@ -159,11 +159,14 @@ class TestMain
 .NET 10  
 
 CmlLib.Core (4.0.6)
+
 CmlLib.Core.Installer.Forge(1.1.1)
+
 CmlLib.Core.Installer.NeoForge(4.0.0)
 
 인터넷 연결 (CurseForge 모드 다운로드용) / internet connection.
 
 Windows 11 25H2 환경에서 테스트 완료, Linux/MacOS는 검증되지 않았습니다.
+
 Tested on Windows 11 25H2.
 
