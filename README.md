@@ -22,7 +22,7 @@ CurseForge에서 제공하는 Minecraft 모드팩(`.zip`)을 손쉽게 읽고 �
 
 ---
 
-##추후 개선사항
+## 추후 개선사항
 
 - Modrinth 형식의 모드팩도 가능하게
 - Fabric/Forge 자동 전환
