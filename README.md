@@ -55,7 +55,9 @@ Help easily read and install the Minecraft mode pack provided by Modpack files(`
 ## 설치 / Installation
 
 NuGet 또는 직접 프로젝트 참조 방식 사용 가능:
-using NuGet. Search `CmlLib.Core.Installer.Modpack`
+
+use NuGet. Search `CmlLib.Core.Installer.Modpack` or You can use below script.
+
 
 ```bash
 # 프로젝트에 직접 추가
