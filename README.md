@@ -1,4 +1,4 @@
-# CurseForge ModPack Parser for CmlLib
+# ModPack Parser for CmlLib
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 **CmlLib.Core.Installer.Modpack**은 [CmlLib](https://github.com/CmlLib/CmlLib.Core)용 에드온(Add-on) 프로젝트로,  
