@@ -69,17 +69,22 @@ git clone https://github.com/jwyoon1220/CurseForgeModPackParser.git
 사용 예시 / Example
 ```csharp
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using CmlLib.Core;
 using CmlLib.Core.Auth;
-using CmlLib.Core.Installers;
 using CmlLib.Core.Installer;
 using CmlLib.Core.Installer.Modpack;
+using CmlLib.Core.Installer.Modpack.ModpackLoader;
 
 class TestMain
 {
+    /// <summary>
+    /// ModPack 파일 다운로드
+    /// Download modpack file to temp directory
+    /// </summary>
     private static async Task<string> DownloadModpackAsync(string url)
     {
         var target = Path.Combine(
@@ -99,61 +104,100 @@ class TestMain
 
     static async Task Main()
     {
-        // 1. ModPack ZIP 경로 / Modpack zip file addr.
-        string zipPath = await DownloadModpackAsync("https://github.com/ihwiyun/hwiyun-discord-bot-oauth/releases/download/server/modpack.zip");
+        // =========================
+        // 1. ModPack 다운로드
+        // Download modpack file
+        // =========================
+        string packPath = await DownloadModpackAsync(
+            "https://github.com/ihwiyun/hwiyun-discord-bot-oauth/releases/download/server/modpack.zip"
+            // Modrinth example:
+            // "https://cdn.modrinth.com/data/xxxx/versions/yyyy/pack.mrpack"
+        );
 
-        // 2. 설치할 게임 디렉터리 / game dir
-        string gameDir = @"C:\users\koroutine\instances";
+        // =========================
+        // 2. ModPack 로더 선택
+        // Select modpack loader by extension
+        // =========================
+        IModPack modpack;
 
-        await using var modpack = new CurseForgeModPack(zipPath);
-
-        // 3. ZIP 추출 + manifest 로드 / unzip and load manifest
-        Console.WriteLine("Loading modpack...");
-        await modpack.LoadAsync();
-
-        Console.WriteLine($"ModPack: {modpack.Name} v{modpack.Version}");
-        Console.WriteLine($"Minecraft Version: {modpack.MinecraftVersion}");
-        Console.WriteLine($"Recommended RAM: {modpack.RecommendedRam} MB");
-
-        // 4. Minecraft + Forge 설치 / Install Minecraft and forge
-        Console.WriteLine("Installing Minecraft and Forge...");
-        var maxMem = modpack.RecommendedRam;
-        var options = new ModPackInstallOptions
+        if (Util.IsModrinthModpack(packPath))
         {
-            GameDirectory = @$"C:\users\koroutine\instances\{modpack.Name}",
+            modpack = new ModrinthModPack(packPath);
+        }
+        else if (Util.IsCurseForgeModpack(packPath))
+        {
+            modpack = new CurseForgeModPack(packPath);
+        }
+        else
+        {
+            throw new NotSupportedException("Unsupported modpack format");
+        }
 
-            // FileProgress: InstallerProgressChangedEventArgs를 문자열로 출력
-            FileProgress = new Progress<InstallerProgressChangedEventArgs>(progress =>
+        await using (modpack as IAsyncDisposable)
+        {
+            // =========================
+            // 3. Manifest 로드
+            // Load modpack manifest
+            // =========================
+            Console.WriteLine("Loading modpack...");
+            await modpack.LoadAsync();
+
+            Console.WriteLine($"Provider: {modpack.Provider}");
+            Console.WriteLine($"ModPack: {modpack.Name} v{modpack.Version}");
+            Console.WriteLine($"Minecraft: {modpack.MinecraftVersion}");
+            Console.WriteLine($"Recommended RAM: {modpack.RecommendedRam} MB");
+
+            // =========================
+            // 4. 설치 옵션 구성
+            // Build install options
+            // =========================
+            string instancesRoot = @"C:\users\koroutine\instances";
+            string instanceDir = Path.Combine(
+                instancesRoot,
+                $"{modpack.Name}_{modpack.Version}");
+
+            var options = new ModPackInstallOptions
             {
-                Console.WriteLine("[Event]");
-                Console.WriteLine($"Name: {progress.Name}");
-                Console.WriteLine($"Progressed: {progress.ProgressedTasks}");
-                Console.WriteLine($"Total: {progress.TotalTasks}");
-                Console.WriteLine($"Ratio: {progress.ProgressedTasks / progress.TotalTasks}%");
-            }),
+                // Instance directory
+                GameDirectory = instanceDir,
 
-            // ByteProgress: ByteProgress를 문자열로 출력
-            ByteProgress = new Progress<ByteProgress>(progress =>
-                Console.WriteLine("Bytes: " + progress.ToRatio() * 100)),
-            Session = MSession.CreateOfflineSession("player"),
-            ServerIp = "your.server",
-            MaximumRamMb = maxMem,
-            MinimumRamMb = 1024,
-        };
+                // File-based progress (Forge / Minecraft install)
+                FileProgress = new Progress<InstallerProgressChangedEventArgs>(p =>
+                {
+                    Console.WriteLine(
+                        $"[File] {p.Name} {p.ProgressedTasks}/{p.TotalTasks}");
+                }),
 
-        var process = await modpack.InstallAndBuildProcessAsync(options);
+                // Byte-based download progress
+                ByteProgress = new Progress<ByteProgress>(p =>
+                {
+                    Console.WriteLine($"[Bytes] {(p.ToRatio() * 100):F2}%");
+                }),
 
-        Console.WriteLine($"Installed Minecraft version: {modpack.MinecraftVersion}");
-        
-        // 5. 모드 다운로드 (manifest 기반)
-        Console.WriteLine("Downloading mods...");
-        await modpack.DownloadModsFromManifestAsync(gameDir);
-        
-        //await modpack.DisposeAsync();
-        Console.WriteLine("All done!");
-        process.Start();
+                // Offline session (no Microsoft login)
+                Session = MSession.CreateOfflineSession("player"),
+
+                // Optional server IP
+                ServerIp = "your.server",
+
+                // Memory settings
+                MaximumRamMb = modpack.RecommendedRam,
+                MinimumRamMb = 1024
+            };
+
+            // =========================
+            // 5. 설치 + 실행 프로세스 생성
+            // Install modpack and build launch process
+            // =========================
+            Console.WriteLine("Installing modpack...");
+            Process process = await modpack.InstallAndBuildProcessAsync(options);
+
+            Console.WriteLine("Installation complete!");
+            process.Start();
+        }
     }
 }
+
 
 ```
 
