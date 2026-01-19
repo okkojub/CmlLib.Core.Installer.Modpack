@@ -63,7 +63,7 @@ use NuGet. Search `CmlLib.Core.Installer.Modpack` or You can use below script.
 
 ```bash
 # 프로젝트에 직접 추가
-git clone https://github.com/jwyoon1220/CurseForgeModPackParser.git
+git clone https://github.com/jwyoon1220/CmlLib.Core.Installer.Modpack.git
 ```
 
 사용 예시 / Example
