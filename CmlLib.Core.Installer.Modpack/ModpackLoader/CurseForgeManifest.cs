@@ -1,4 +1,4 @@
-﻿namespace CmlLib.Core.Installer.Modpack;
+﻿namespace CmlLib.Core.Installer.Modpack.ModpackLoader;
 
 using System.Collections.Generic;
 

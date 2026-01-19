@@ -499,7 +499,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "restore": {
       "projectUniqueName": "E:\\riderp\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack.csproj",
       "projectName": "CmlLib.Core.Installer.Modpack",

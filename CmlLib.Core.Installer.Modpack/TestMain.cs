@@ -7,10 +7,11 @@ using CmlLib.Core.Auth;
 using CmlLib.Core.Installers;
 using CmlLib.Core.Installer;
 using CmlLib.Core.Installer.Modpack;
+using CmlLib.Core.Installer.Modpack.ModpackLoader;
 
 namespace CmlLib.Core.Installer.Modpack;
 
-class TestMain
+internal class TestMain
 {
     private static async Task<string> DownloadModpackAsync(string url)
     {
@@ -29,60 +30,31 @@ class TestMain
         return target;
     }
 
-    static async Task Main()
+    public static async Task Main()
     {
-        // 1. ModPack ZIP 경로
-        string zipPath = await DownloadModpackAsync("https://github.com/ihwiyun/hwiyun-discord-bot-oauth/releases/download/server/modpack.zip");
-
-        // 2. 설치할 게임 디렉터리
-        string gameDir = @"C:\users\koroutine\instances";
-
-        await using var modpack = new CurseForgeModPack(zipPath);
-
-        // 3. ZIP 추출 + manifest 로드
-        Console.WriteLine("Loading modpack...");
-        await modpack.LoadAsync();
-
-        Console.WriteLine($"ModPack: {modpack.Name} v{modpack.Version}");
-        Console.WriteLine($"Minecraft Version: {modpack.MinecraftVersion}");
-        Console.WriteLine($"Recommended RAM: {modpack.RecommendedRam} MB");
-
-        // 4. Minecraft + Forge 설치
-        Console.WriteLine("Installing Minecraft and Forge...");
-        var maxMem = modpack.RecommendedRam;
-        var options = new ModPackInstallOptions
+        // Load modpack from URL.
+        var pack = await CurseForgeModPack.FromUrlAsync("https://github.com/ihwiyun/hwiyun-discord-bot-oauth/releases/download/server/modpack.zip");
+        
+        // Install modpack on your computer.
+        var process = await pack.InstallAndBuildProcessAsync(new ModPackInstallOptions()
         {
-            GameDirectory = @$"C:\users\koroutine\instances\{modpack.Name}",
-
-            // FileProgress: InstallerProgressChangedEventArgs를 문자열로 출력
-            FileProgress = new Progress<InstallerProgressChangedEventArgs>(progress =>
+            ServerIp = "your.server",
+            MaximumRamMb = pack.RecommendedRam,
+            MinimumRamMb = 128,
+            
+            GameDirectory = @$"modpacks\{pack.Name}_{pack.Version}", // safe directory. don't use already used folder by other mc client
+            
+            Session = MSession.CreateOfflineSession("player123"), // Put Your session. see https://cmllib.github.io/CmlLib.Core-wiki/en/auth.microsoft/
+            
+            ByteProgress = new Progress<ByteProgress>(e =>
             {
-                Console.WriteLine("[Event]");
-                Console.WriteLine($"Name: {progress.Name}");
-                Console.WriteLine($"Progressed: {progress.ProgressedTasks}");
-                Console.WriteLine($"Total: {progress.TotalTasks}");
-                Console.WriteLine($"Ratio: {progress.ProgressedTasks / progress.TotalTasks}%");
+                Console.WriteLine(e.ToRatio() * 100 + "%");
             }),
-
-            // ByteProgress: ByteProgress를 문자열로 출력
-            ByteProgress = new Progress<ByteProgress>(progress =>
-                Console.WriteLine("Bytes: " + progress.ToRatio() * 100)),
-            Session = MSession.CreateOfflineSession("player"),
-            ServerIp = "giowqmndkl.kr",
-            MaximumRamMb = maxMem,
-            MinimumRamMb = 1024,
-        };
-
-        var process = await modpack.InstallAndBuildProcessAsync(options);
-
-        Console.WriteLine($"Installed Minecraft version: {modpack.MinecraftVersion}");
-        
-        // 5. 모드 다운로드 (manifest 기반)
-        Console.WriteLine("Downloading mods...");
-        await modpack.DownloadModsFromManifestAsync(gameDir);
-        
-        //await modpack.DisposeAsync();
-        Console.WriteLine("All done!");
+            FileProgress = new Progress<InstallerProgressChangedEventArgs>(e =>
+            {
+                Console.WriteLine($"Name: {e.Name}\nType: {e.EventType}\n Progressed: {e.ProgressedTasks}/{e.TotalTasks}");
+            }) 
+        });
         process.Start();
     }
 }
