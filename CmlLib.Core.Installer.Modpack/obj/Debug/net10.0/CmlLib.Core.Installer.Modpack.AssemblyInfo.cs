@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright 2026 Junwon Yoon")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("ModPack Parser for CmlLib")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.1.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1+bcad04d6b4c01e6839347edfd55fca5ad8503d62")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1+7f15dd8a342880aa322e2a2ee566b14533dec47c")]
 [assembly: System.Reflection.AssemblyProductAttribute("CmlLib.Core.Installer.Modpack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CmlLib.Core.Installer.Modpack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.1.0")]
