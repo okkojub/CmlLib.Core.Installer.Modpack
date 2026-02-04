@@ -495,24 +495,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\koroutine\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\jonar\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.1",
+    "version": "1.0.1-neoforge",
     "restore": {
-      "projectUniqueName": "E:\\riderp\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack.csproj",
+      "projectUniqueName": "F:\\GIT\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack.csproj",
       "projectName": "CmlLib.Core.Installer.Modpack",
-      "projectPath": "E:\\riderp\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack.csproj",
-      "packagesPath": "C:\\Users\\koroutine\\.nuget\\packages\\",
-      "outputPath": "E:\\riderp\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack\\obj\\",
+      "projectPath": "F:\\GIT\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack.csproj",
+      "packagesPath": "C:\\Users\\jonar\\.nuget\\packages\\",
+      "outputPath": "F:\\GIT\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\koroutine\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\jonar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

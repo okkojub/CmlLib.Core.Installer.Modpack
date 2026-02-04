@@ -1,22 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "5safCQeZnhc=",
+  "dgSpecHash": "azh+dTRvcws=",
   "success": true,
-  "projectFilePath": "E:\\riderp\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack.csproj",
+  "projectFilePath": "F:\\GIT\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\koroutine\\.nuget\\packages\\cmllib.core\\4.0.6\\cmllib.core.4.0.6.nupkg.sha512",
-    "C:\\Users\\koroutine\\.nuget\\packages\\cmllib.core.auth.microsoft\\3.3.1\\cmllib.core.auth.microsoft.3.3.1.nupkg.sha512",
-    "C:\\Users\\koroutine\\.nuget\\packages\\cmllib.core.commons\\4.0.0\\cmllib.core.commons.4.0.0.nupkg.sha512",
-    "C:\\Users\\koroutine\\.nuget\\packages\\cmllib.core.installer.forge\\1.1.1\\cmllib.core.installer.forge.1.1.1.nupkg.sha512",
-    "C:\\Users\\koroutine\\.nuget\\packages\\cmllib.core.installer.neoforge\\4.0.0\\cmllib.core.installer.neoforge.4.0.0.nupkg.sha512",
-    "C:\\Users\\koroutine\\.nuget\\packages\\htmlagilitypack\\1.12.4\\htmlagilitypack.1.12.4.nupkg.sha512",
-    "C:\\Users\\koroutine\\.nuget\\packages\\lzma-sdk\\19.0.0\\lzma-sdk.19.0.0.nupkg.sha512",
-    "C:\\Users\\koroutine\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
-    "C:\\Users\\koroutine\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
-    "C:\\Users\\koroutine\\.nuget\\packages\\sharpziplib\\1.4.2\\sharpziplib.1.4.2.nupkg.sha512",
-    "C:\\Users\\koroutine\\.nuget\\packages\\xboxauthnet\\3.0.4\\xboxauthnet.3.0.4.nupkg.sha512",
-    "C:\\Users\\koroutine\\.nuget\\packages\\xboxauthnet.game\\1.4.1\\xboxauthnet.game.1.4.1.nupkg.sha512",
-    "C:\\Users\\koroutine\\.nuget\\packages\\yamldotnet\\16.3.0\\yamldotnet.16.3.0.nupkg.sha512"
+    "C:\\Users\\jonar\\.nuget\\packages\\cmllib.core\\4.0.6\\cmllib.core.4.0.6.nupkg.sha512",
+    "C:\\Users\\jonar\\.nuget\\packages\\cmllib.core.auth.microsoft\\3.3.1\\cmllib.core.auth.microsoft.3.3.1.nupkg.sha512",
+    "C:\\Users\\jonar\\.nuget\\packages\\cmllib.core.commons\\4.0.0\\cmllib.core.commons.4.0.0.nupkg.sha512",
+    "C:\\Users\\jonar\\.nuget\\packages\\cmllib.core.installer.forge\\1.1.1\\cmllib.core.installer.forge.1.1.1.nupkg.sha512",
+    "C:\\Users\\jonar\\.nuget\\packages\\cmllib.core.installer.neoforge\\4.0.0\\cmllib.core.installer.neoforge.4.0.0.nupkg.sha512",
+    "C:\\Users\\jonar\\.nuget\\packages\\htmlagilitypack\\1.12.4\\htmlagilitypack.1.12.4.nupkg.sha512",
+    "C:\\Users\\jonar\\.nuget\\packages\\lzma-sdk\\19.0.0\\lzma-sdk.19.0.0.nupkg.sha512",
+    "C:\\Users\\jonar\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\jonar\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\jonar\\.nuget\\packages\\sharpziplib\\1.4.2\\sharpziplib.1.4.2.nupkg.sha512",
+    "C:\\Users\\jonar\\.nuget\\packages\\xboxauthnet\\3.0.4\\xboxauthnet.3.0.4.nupkg.sha512",
+    "C:\\Users\\jonar\\.nuget\\packages\\xboxauthnet.game\\1.4.1\\xboxauthnet.game.1.4.1.nupkg.sha512",
+    "C:\\Users\\jonar\\.nuget\\packages\\yamldotnet\\16.3.0\\yamldotnet.16.3.0.nupkg.sha512"
   ],
   "logs": []
 }

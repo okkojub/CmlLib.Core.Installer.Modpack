@@ -15,7 +15,7 @@
         <RepositoryUrl>https://github.com/jwyoon1220/CmlLib.Core.Installer.Modpack</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-        <Version>1.0.1</Version>
+        <Version>1.0.1-neoforge</Version>
     </PropertyGroup>
 
     <ItemGroup>

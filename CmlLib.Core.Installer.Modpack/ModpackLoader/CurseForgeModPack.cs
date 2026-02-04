@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using CmlLib.Core;
 using CmlLib.Core.Installer;
 using CmlLib.Core.Installer.Forge;
+using CmlLib.Core.Installer.NeoForge;
+using CmlLib.Core.Installer.NeoForge.Installers;
 using CmlLib.Core.ModLoaders.FabricMC;
 
 namespace CmlLib.Core.Installer.Modpack.ModpackLoader;
@@ -107,6 +109,26 @@ public sealed class CurseForgeModPack : IAsyncDisposable
                 _manifest.minecraft.version,
                 forgeVersion,
                 new ForgeInstallOptions
+                {
+                    FileProgress = options.FileProgress,
+                    ByteProgress = options.ByteProgress
+                });
+
+            await launcher.InstallAsync(
+                versionName,
+                options.FileProgress,
+                options.ByteProgress);
+        }
+        // ===== NeoForge =====
+        else if (loader.id.StartsWith("neoforge-"))
+        {
+            var neoforgeVersion = loader.id["neoforge-".Length..];
+            var installer = new NeoForgeInstaller(launcher);
+
+            versionName = await installer.Install(
+                _manifest.minecraft.version,
+                neoforgeVersion,
+                new NeoForgeInstallOptions
                 {
                     FileProgress = options.FileProgress,
                     ByteProgress = options.ByteProgress
