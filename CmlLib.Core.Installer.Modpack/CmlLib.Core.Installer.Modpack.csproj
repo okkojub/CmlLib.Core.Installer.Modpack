@@ -1,21 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <OutputType>Exe</OutputType>
+        
+        <!-- Bibliotecas NO necesitan EntryPoint -->
+        <OutputType>Library</OutputType>
+        <GenerateProgramFile>false</GenerateProgramFile>
+        
+        <!-- Paquete NuGet -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Title>modpack parser      </Title>
+        <PackageOutputPath>./nupkgs</PackageOutputPath>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        
+        <!-- IMPORTANTE: Esto evita archivos de ejecución -->
+        <GenerateRuntimeConfigurationFiles>false</GenerateRuntimeConfigurationFiles>
+        <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+        
+        <!-- Metadatos -->
+        <Title>modpack parser</Title>
         <Authors>jwyoon1220</Authors>
-        <Description>ModPack Parser for CmlLib</Description>
+        <Description>ModPack Parser for CmlLib with NeoForge support</Description>
         <Copyright>Copyright 2026 Junwon Yoon</Copyright>
         <PackageProjectUrl>https://github.com/jwyoon1220/CmlLib.Core.Installer.Modpack</PackageProjectUrl>
-        <PackageLicenseUrl> https://github.com/jwyoon1220/CmlLib.Core.Installer.Modpack/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageLicenseUrl>https://github.com/jwyoon1220/CmlLib.Core.Installer.Modpack/blob/master/LICENSE</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/jwyoon1220/CmlLib.Core.Installer.Modpack</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Version>1.0.1-neoforge</Version>
+        <PackageId>CmlLib.Core.Installer.Modpack.NeoForge</PackageId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -27,4 +41,10 @@
       <PackageReference Include="YamlDotNet" Version="16.3.0" />
     </ItemGroup>
 
+    <!-- Excluir explícitamente cualquier archivo de runtime -->
+    <ItemGroup>
+        <None Remove="**/*.runtimeconfig.json" />
+        <None Remove="**/*.exe" />
+        <None Remove="**/*.deps.json" />
+    </ItemGroup>
 </Project>

@@ -501,7 +501,7 @@
     "version": "1.0.1-neoforge",
     "restore": {
       "projectUniqueName": "F:\\GIT\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack.csproj",
-      "projectName": "CmlLib.Core.Installer.Modpack",
+      "projectName": "CmlLib.Core.Installer.Modpack.NeoForge",
       "projectPath": "F:\\GIT\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack.csproj",
       "packagesPath": "C:\\Users\\jonar\\.nuget\\packages\\",
       "outputPath": "F:\\GIT\\CmlLib.Core.Installer.Modpack\\CmlLib.Core.Installer.Modpack\\obj\\",

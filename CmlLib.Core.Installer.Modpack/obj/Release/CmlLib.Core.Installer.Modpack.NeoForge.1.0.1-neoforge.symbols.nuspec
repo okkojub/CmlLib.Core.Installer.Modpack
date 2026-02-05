@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>CmlLib.Core.Installer.Modpack.NeoForge</id>
+    <version>1.0.1-neoforge</version>
+    <title>modpack parser</title>
+    <authors>jwyoon1220</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/jwyoon1220/CmlLib.Core.Installer.Modpack/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/jwyoon1220/CmlLib.Core.Installer.Modpack</projectUrl>
+    <description>ModPack Parser for CmlLib with NeoForge support</description>
+    <copyright>Copyright 2026 Junwon Yoon</copyright>
+    <repository type="git" url="https://github.com/jwyoon1220/CmlLib.Core.Installer.Modpack" commit="440d5dfd91a0dc4e8ecb0261fd281461c711c45d" />
+    <dependencies>
+      <group targetFramework="net10.0">
+        <dependency id="CmlLib.Core" version="4.0.6" exclude="Build,Analyzers" />
+        <dependency id="CmlLib.Core.Auth.Microsoft" version="3.3.1" exclude="Build,Analyzers" />
+        <dependency id="CmlLib.Core.Installer.Forge" version="1.1.1" exclude="Build,Analyzers" />
+        <dependency id="CmlLib.Core.Installer.NeoForge" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="HtmlAgilityPack" version="1.12.4" exclude="Build,Analyzers" />
+        <dependency id="YamlDotNet" version="16.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="F:\GIT\CmlLib.Core.Installer.Modpack\CmlLib.Core.Installer.Modpack\bin\Release\net10.0\CmlLib.Core.Installer.Modpack.pdb" target="lib\net10.0\CmlLib.Core.Installer.Modpack.pdb" />
+  </files>
+</package>

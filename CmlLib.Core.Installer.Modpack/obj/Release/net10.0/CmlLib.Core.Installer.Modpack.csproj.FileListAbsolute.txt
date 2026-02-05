@@ -1,0 +1,11 @@
+F:\GIT\CmlLib.Core.Installer.Modpack\CmlLib.Core.Installer.Modpack\bin\Release\net10.0\CmlLib.Core.Installer.Modpack.deps.json
+F:\GIT\CmlLib.Core.Installer.Modpack\CmlLib.Core.Installer.Modpack\bin\Release\net10.0\CmlLib.Core.Installer.Modpack.dll
+F:\GIT\CmlLib.Core.Installer.Modpack\CmlLib.Core.Installer.Modpack\bin\Release\net10.0\CmlLib.Core.Installer.Modpack.pdb
+F:\GIT\CmlLib.Core.Installer.Modpack\CmlLib.Core.Installer.Modpack\obj\Release\net10.0\CmlLib.Core.Installer.Modpack.csproj.AssemblyReference.cache
+F:\GIT\CmlLib.Core.Installer.Modpack\CmlLib.Core.Installer.Modpack\obj\Release\net10.0\CmlLib.Core.Installer.Modpack.GeneratedMSBuildEditorConfig.editorconfig
+F:\GIT\CmlLib.Core.Installer.Modpack\CmlLib.Core.Installer.Modpack\obj\Release\net10.0\CmlLib.Core.Installer.Modpack.AssemblyInfoInputs.cache
+F:\GIT\CmlLib.Core.Installer.Modpack\CmlLib.Core.Installer.Modpack\obj\Release\net10.0\CmlLib.Core.Installer.Modpack.AssemblyInfo.cs
+F:\GIT\CmlLib.Core.Installer.Modpack\CmlLib.Core.Installer.Modpack\obj\Release\net10.0\CmlLib.Core.Installer.Modpack.csproj.CoreCompileInputs.cache
+F:\GIT\CmlLib.Core.Installer.Modpack\CmlLib.Core.Installer.Modpack\obj\Release\net10.0\CmlLib.Core.Installer.Modpack.sourcelink.json
+F:\GIT\CmlLib.Core.Installer.Modpack\CmlLib.Core.Installer.Modpack\obj\Release\net10.0\CmlLib.Core.Installer.Modpack.dll
+F:\GIT\CmlLib.Core.Installer.Modpack\CmlLib.Core.Installer.Modpack\obj\Release\net10.0\CmlLib.Core.Installer.Modpack.pdb
